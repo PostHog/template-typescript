@@ -2,15 +2,15 @@
 
 Hey there! Starting a new JS/TS package?
 
-Whether it's a library, a plugin, an integration, a CLI, or anything else in the world:
+Whether it's a library, a plugin, an integration, a CLI, or anything else in the world:
 
 -   Write it in TypeScript for best reliability and development experience.
 -   Use the battle-tested Yarn for dependency management.
 -   Test quickly and easily with Jest.
 -   Adhere to PostHog Style™️ by formatting code with Prettier and ensuring best practices with ESLint
-    – or actually, don't do it: let pre-commit hooks handle this for you.
+    – or actually, don't do it: let pre-commit hooks handle this for you.
 
-Start out using this template and hit the ground quickly with all of the above from the get-go.
+Start out using this template and hit the ground quickly with all of the above from the get-go.
 
 ## Get on with it
 
