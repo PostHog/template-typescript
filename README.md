@@ -12,6 +12,7 @@
 > -   Test quickly and easily with Jest (plus `ts-jest` for TypeScript support).
 > -   Adhere to PostHog Style™️ by formatting code with Prettier and ensuring best practices with ESLint
 >     – or actually, don't do it: let pre-commit hooks handle this for you.
+> -   Have GitHub Actions run all of the above when working on pull requests. Plus have them take care of publishing releases on npm and GitHub whenever the version is incremented.
 >
 > Start out using this template and hit the ground quickly with all of the above from the get-go.
 >
