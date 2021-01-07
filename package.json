@@ -2,7 +2,14 @@
     "name": "♦️♦️♦️SET-YOUR-OWN-HERE♦️♦️♦️",
     "version": "1.0.0",
     "description": "♦️♦️♦️SET-YOUR-OWN-HERE♦️♦️♦️",
-    "keywords": ["♦️♦️♦️", "SET", "YOUR", "OWN", "HERE", "♦️♦️♦️"],
+    "keywords": [
+        "♦️♦️♦️",
+        "SET",
+        "YOUR",
+        "OWN",
+        "HERE",
+        "♦️♦️♦️"
+    ],
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "repository": "github:PostHog/♦️♦️♦️SET-YOUR-OWN-HERE♦️♦️♦️",
