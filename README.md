@@ -1,5 +1,8 @@
 # PostHog Template for the Next TypeScript Package
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![npm package](https://img.shields.io/npm/v/♦️♦️♦️SET-YOUR-OWN-PACKAGE-NAME-HERE♦️♦️♦️?style=flat-square)](https://www.npmjs.com/package/♦️♦️♦️SET-YOUR-OWN-PACKAGE-NAME-HERE♦️♦️♦️)
+
 Hey there! Starting a new JS/TS package?
 
 Whether it's a library, a plugin, an integration, a CLI, or anything else in the world:
