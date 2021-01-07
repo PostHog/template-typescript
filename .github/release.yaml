@@ -1,0 +1,61 @@
+name: 'Release'
+
+on:
+    push:
+        branches:
+            - main
+            - master
+
+jobs:
+    release:
+        name: Bake a Release
+        runs-on: ubuntu-20.04
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Get package version
+              run: |
+                  PACKAGE_VERSION=$(node -p "require('./package.json').version")
+                  PACKAGE_VERSION_TAG="v$PACKAGE_VERSION"
+                  if git rev-parse "$PACKAGE_VERSION_TAG"; then
+                    IS_NEW_VERSION=false
+                  else
+                    IS_NEW_VERSION=true
+                  fi
+                  echo "PACKAGE_VERSION=$PACKAGE_VERSION" >> $GITHUB_ENV
+                  echo "PACKAGE_VERSION_TAG=$PACKAGE_VERSION_TAG" >> $GITHUB_ENV
+                  echo "IS_NEW_VERSION=$IS_NEW_VERSION" >> $GITHUB_ENV
+
+            - name: Cancel if this isn't a new version
+              run: ([ "$IS_NEW_VERSION" = true ] || exit 1)
+
+            - name: Set up Node 12
+              uses: actions/setup-node@v2
+              with:
+                  node-version: 12
+
+            - name: Install dependencies
+              run: yarn
+
+            - name: Build the package
+              run: yarn build
+
+            - name: Create GitHub release
+              uses: actions/create-release@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  tag_name: ${{ env.PACKAGE_VERSION_TAG }}
+                  release_name: ${{ env.PACKAGE_VERSION }}
+
+            - name: Publish the package in the npm registry
+              run: yarn publish --access public
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+            - name: Publish the package in the GitHub registry
+              run: YARN_REGISTRY="https://npm.pkg.github.com" yarn publish --access public
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
