@@ -12,7 +12,7 @@ jobs:
         runs-on: ubuntu-20.04
 
         steps:
-            - name: Checkout code
+            - name: Checkout the repository
               uses: actions/checkout@v2
 
             - name: Get package version
@@ -31,10 +31,10 @@ jobs:
             - name: Cancel if this isn't a new version
               run: ([ "$IS_NEW_VERSION" = true ] || exit 1)
 
-            - name: Set up Node 12
+            - name: Set up Node 14
               uses: actions/setup-node@v2
               with:
-                  node-version: 12
+                  node-version: 14
 
             - name: Install dependencies
               run: yarn
