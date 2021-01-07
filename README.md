@@ -18,11 +18,11 @@
 > ## Get on with it
 >
 > 1. Update fields `name`, `description`, `keywords`, `respository`, `bugs` and `homepage` in `package.json`.
-> 2. Make sure tha you have Yarn installed and run `yarn` to install dependencies.  
+> 2. Make sure that you have Yarn installed and run `yarn` to install dependencies.  
 >    Note: file `yarn.lock` will be created. Commit this.
 > 3. Write your package, starting with `src/index.ts`!
 
-*Now, erase the notes above and fill this README with something actually relevant!*
+*Now, erase the notes above and fill this README with something actually relevant! Don't forget to update the npm badge.*
 
 ## Questions?
 
