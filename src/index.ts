@@ -1,5 +1,11 @@
-export function hello(): void {
-    console.log('This is where it all starts')
+export interface HelloOptions {
+    log?: boolean
+}
+
+export function hello(options?: HelloOptions): string {
+    const messageForYou = 'This is where it all starts'
+    if (options?.log) console.log(messageForYou)
+    return messageForYou
 }
 
 hello()
