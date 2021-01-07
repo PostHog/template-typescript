@@ -31,6 +31,7 @@
         "prepublishOnly": "yarn test && yarn build"
     },
     "devDependencies": {
+        "@types/jest": "^26.0.19",
         "@typescript-eslint/eslint-plugin": "^4.12.0",
         "@typescript-eslint/parser": "^4.12.0",
         "eslint": "^7.0.0",
