@@ -1,22 +1,23 @@
 {
-    "name": "♦️♦️♦️SET-YOUR-OWN-HERE♦️♦️♦️",
+    "name": "♦️♦️♦️SET-YOUR-OWN-PACKAGE-NAME-HERE♦️♦️♦️",
     "version": "1.0.0",
-    "description": "♦️♦️♦️SET-YOUR-OWN-HERE♦️♦️♦️",
+    "description": "♦️♦️♦️SET-YOUR-OWN-DESCRIPTION-HERE♦️♦️♦️",
     "keywords": [
         "♦️♦️♦️",
         "SET",
         "YOUR",
         "OWN",
+        "KEYWORDS",
         "HERE",
         "♦️♦️♦️"
     ],
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "repository": "github:PostHog/♦️♦️♦️SET-YOUR-OWN-HERE♦️♦️♦️",
+    "repository": "github:PostHog/♦️♦️♦️SET-YOUR-OWN-REPOSITORY-NAME-HERE♦️♦️♦️",
     "bugs": {
-        "url": "https://github.com/PostHog/♦️♦️♦️SET-YOUR-OWN-HERE♦️♦️♦️/issues"
+        "url": "https://github.com/PostHog/♦️♦️♦️SET-YOUR-OWN-REPOSITORY-NAME-HERE♦️♦️♦️/issues"
     },
-    "homepage": "https://github.com/PostHog/♦️♦️♦️SET-YOUR-OWN-HERE♦️♦️♦️#readme",
+    "homepage": "https://github.com/PostHog/♦️♦️♦️SET-YOUR-OWN-REPOSITORY-NAME-HERE♦️♦️♦️#readme",
     "author": "PostHog <hey@posthog.com>",
     "license": "MIT",
     "scripts": {
