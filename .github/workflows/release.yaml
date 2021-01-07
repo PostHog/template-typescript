@@ -43,9 +43,11 @@ jobs:
               if: steps.version.outputs.IS_NEW_VERSION == 'true'
               run: yarn --frozen-lockfile
 
-            - name: Build the package
+            - name: Publish the package in the npm registry
               if: steps.version.outputs.IS_NEW_VERSION == 'true'
-              run: yarn build
+              run: yarn publish --access public
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
             - name: Create GitHub release
               if: steps.version.outputs.IS_NEW_VERSION == 'true'
@@ -55,9 +57,3 @@ jobs:
               with:
                   tag_name: ${{ env.PACKAGE_VERSION_TAG }}
                   release_name: ${{ env.PACKAGE_VERSION }}
-
-            - name: Publish the package in the npm registry
-              if: steps.version.outputs.IS_NEW_VERSION == 'true'
-              run: yarn publish --access public
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
