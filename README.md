@@ -6,7 +6,7 @@ Whether it's a library, a plugin, an integration, a CLI, or anything else 
 
 -   Write it in TypeScript for best reliability and development experience.
 -   Use the battle-tested Yarn for dependency management.
--   Test quickly and easily with Jest.
+-   Test quickly and easily with Jest (plus `ts-jest` for TypeScript support).
 -   Adhere to PostHog Style™️ by formatting code with Prettier and ensuring best practices with ESLint
     – or actually, don't do it: let pre-commit hooks handle this for you.
 
