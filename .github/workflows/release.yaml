@@ -14,8 +14,11 @@ jobs:
         steps:
             - name: Checkout the repository
               uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
 
             - name: Get package version
+              id: version
               run: |
                   PACKAGE_VERSION=$(node -p "require('./package.json').version")
                   PACKAGE_VERSION_TAG="v$PACKAGE_VERSION"
@@ -27,22 +30,25 @@ jobs:
                   echo "PACKAGE_VERSION=$PACKAGE_VERSION" >> $GITHUB_ENV
                   echo "PACKAGE_VERSION_TAG=$PACKAGE_VERSION_TAG" >> $GITHUB_ENV
                   echo "IS_NEW_VERSION=$IS_NEW_VERSION" >> $GITHUB_ENV
-
-            - name: Cancel if this isn't a new version
-              run: ([ "$IS_NEW_VERSION" = true ] || exit 1)
+                  echo "::set-output name=IS_NEW_VERSION::$IS_NEW_VERSION"
 
             - name: Set up Node 14
+              if: steps.version.outputs.IS_NEW_VERSION == 'true'
               uses: actions/setup-node@v2
               with:
                   node-version: 14
+                  registry-url: https://registry.npmjs.org
 
             - name: Install dependencies
-              run: yarn
+              if: steps.version.outputs.IS_NEW_VERSION == 'true'
+              run: yarn --frozen-lockfile
 
             - name: Build the package
+              if: steps.version.outputs.IS_NEW_VERSION == 'true'
               run: yarn build
 
             - name: Create GitHub release
+              if: steps.version.outputs.IS_NEW_VERSION == 'true'
               uses: actions/create-release@v1
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -51,11 +57,7 @@ jobs:
                   release_name: ${{ env.PACKAGE_VERSION }}
 
             - name: Publish the package in the npm registry
+              if: steps.version.outputs.IS_NEW_VERSION == 'true'
               run: yarn publish --access public
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-            - name: Publish the package in the GitHub registry
-              run: YARN_REGISTRY="https://npm.pkg.github.com" yarn publish --access public
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
