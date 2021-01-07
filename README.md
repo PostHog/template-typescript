@@ -15,5 +15,5 @@ Start out using this template and hit the ground quickly with all of the above f
 ## Get on with it
 
 1. Update fields `name`, `description`, `keywords`, `respository`, `bugs` and `homepage` in `package.json`.
-2. Run `yarn` to install dependencies.
+2. Run `yarn` to install dependencies. Note: file `yarn.lock` will be created. Commit this.
 3. Write your package, starting with `src/index.ts`!
