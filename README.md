@@ -23,7 +23,7 @@
 >    Note: file `yarn.lock` will be created. Commit this.
 > 3. Write your package, starting with `src/index.ts`!
 
-*Now, erase the notes above and fill this README with something actually relevant! Don't forget to update the npm badge.*
+_Now, erase the notes above and fill this README with something actually relevant! Don't forget to update the npm badge._
 
 ## Questions?
 
