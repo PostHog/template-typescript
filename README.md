@@ -22,8 +22,10 @@
 > 2. Make sure that you have Yarn installed and run `yarn` to install dependencies.  
 >    Note: file `yarn.lock` will be created. Commit this.
 > 3. Write your package, starting with `src/index.ts`!
+>
+> _When publishing on GitHub, add an automation-type npm access token as GitHub secret `NPM_TOKEN` in order for auto-release to work._
 
-_Now, erase the notes above and fill this README with something actually relevant! Don't forget to update the npm badge._
+_Now, erase the notes above and fill this README with something actually relevant! Don't forget to update the npm badge too._
 
 ## Questions?
 
